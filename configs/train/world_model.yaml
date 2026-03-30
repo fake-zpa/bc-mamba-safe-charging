@@ -1,0 +1,22 @@
+# World Model Training Configuration
+world_model_train:
+  epochs: 100
+  batch_size: 256
+  lr: 3.0e-4
+  weight_decay: 1.0e-4
+  scheduler: "cosine"
+  warmup_steps: 300
+  grad_clip: 1.0
+
+  # AMP
+  use_amp: true
+  amp_dtype: "bf16"
+
+  # Losses
+  latent_pred_weight: 1.0
+  obs_pred_weight: 0.5
+  reward_pred_weight: 0.3
+
+  # Checkpoint
+  save_every: 10
+  eval_every: 5

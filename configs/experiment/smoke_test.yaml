@@ -1,0 +1,32 @@
+# Smoke Test Experiment Configuration
+# Minimal config for quick validation
+experiment:
+  name: "smoke_test"
+  seed: 42
+  method: "hm_latent_safe_rl"
+  dataset: "synthetic"
+
+  # Override for fast testing
+  data:
+    window_length: 16
+    batch_size: 32
+    num_workers: 2
+
+  encoder:
+    d_model: 32
+    n_layer: 1
+    d_state: 8
+    latent_dim: 16
+
+  world_model:
+    hidden_dim: 64
+    n_ensemble: 2
+
+  rl:
+    epochs: 5
+    steps_per_epoch: 50
+    batch_size: 32
+
+  pretrain:
+    epochs: 5
+    batch_size: 32

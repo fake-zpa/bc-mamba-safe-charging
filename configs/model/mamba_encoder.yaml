@@ -1,0 +1,29 @@
+# Mamba Encoder Configuration
+encoder:
+  type: "mamba"  # mamba | dual_mamba | gru | transformer | none
+  d_model: 128
+  n_layer: 4
+  d_state: 16
+  d_conv: 4
+  expand: 2
+  latent_dim: 64
+  dropout: 0.1
+  use_checkpoint: false
+
+  # Dual-stream specific
+  dual_stream:
+    voltage_current_dim: 64
+    thermal_degradation_dim: 64
+    fusion: "concat"  # concat | attention | gate
+
+# Baseline encoders
+gru_encoder:
+  hidden_dim: 128
+  n_layers: 2
+  dropout: 0.1
+
+transformer_encoder:
+  d_model: 128
+  n_heads: 4
+  n_layers: 2
+  dropout: 0.1

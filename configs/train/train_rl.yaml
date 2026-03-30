@@ -1,0 +1,44 @@
+# Offline RL Training Configuration
+rl:
+  method: "hm_latent_safe_rl"  # bc | cql | iql | hm_latent_safe_rl
+  epochs: 200
+  steps_per_epoch: 1000
+  batch_size: 256
+  lr_actor: 3.0e-4
+  lr_critic: 3.0e-4
+  lr_encoder: 1.0e-4
+  weight_decay: 1.0e-4
+  tau: 0.005
+  gamma: 0.99
+  grad_clip: 1.0
+  grad_accumulation_steps: 1
+
+  # AMP
+  use_amp: true
+  amp_dtype: "bf16"
+
+  # CQL specific
+  cql:
+    alpha: 5.0
+    n_action_samples: 10
+    with_lagrange: false
+    lagrange_threshold: 10.0
+
+  # IQL specific
+  iql:
+    expectile: 0.7
+    temperature: 3.0
+
+  # HM-LatentSafeRL specific
+  hm_safe:
+    world_model_rollout_steps: 5
+    safety_mode: "uncertainty_aware"
+    risk_penalty_weight: 2.0
+    health_loss_weight: 0.5
+    dynamics_loss_weight: 0.3
+    risk_loss_weight: 0.5
+    conservative_weight: 1.0
+
+  # Checkpoint
+  save_every: 20
+  eval_every: 10

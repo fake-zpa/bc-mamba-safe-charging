@@ -1,0 +1,26 @@
+# RL Model Configuration
+actor:
+  hidden_dim: 256
+  n_layers: 2
+  dropout: 0.1
+  log_std_min: -5.0
+  log_std_max: 2.0
+  use_tanh_squash: true
+
+critic:
+  hidden_dim: 256
+  n_layers: 2
+  n_critics: 2
+  dropout: 0.1
+
+risk_head:
+  hidden_dim: 128
+  n_layers: 2
+  n_constraints: 4  # voltage, temperature, dT/dt, plating
+  dropout: 0.1
+
+safety_layer:
+  mode: "uncertainty_aware"  # none | reward_penalty | hard_projection | uncertainty_aware
+  risk_threshold: 0.3
+  uncertainty_scale: 1.0
+  projection_lr: 0.01

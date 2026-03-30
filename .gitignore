@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Data & results (not tracked)
+data/
+results/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.h5
+*.hdf5
+
+# Figures & paper
+paper/
+figures/
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Logs
+*.log
+*.out
+wandb/
+runs/
+mlruns/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Misc
+*.tmp
+*.bak

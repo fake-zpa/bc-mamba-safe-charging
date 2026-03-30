@@ -1,0 +1,11 @@
+# Latent World Model Configuration
+world_model:
+  latent_dim: 64
+  action_dim: 1
+  hidden_dim: 256
+  obs_dim: 10
+  n_ensemble: 5
+  dropout: 0.1
+  predict_reward: true
+  predict_obs: true
+  max_rollout_length: 10
